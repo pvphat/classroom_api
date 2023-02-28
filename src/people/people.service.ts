@@ -1,8 +1,21 @@
 import { Injectable } from "@nestjs/common";
+import { PeopleEntity } from "./people.entity";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
 
 @Injectable()
 export class PeopleService {
-    async HelloWorld() {
-        return "Hello world";
+    
+    constructor(
+        @InjectRepository(PeopleEntity)
+        private peopleRepository: Repository<PeopleEntity>,
+    ){}
+    
+    async getAllUser() {
+        return this.peopleRepository.find();
+    }
+
+    async getOneBy(info: any){
+        return this.peopleRepository.findOneBy(info);
     }
 }
