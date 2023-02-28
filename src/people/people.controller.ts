@@ -1,11 +1,16 @@
 import { Controller, Get } from "@nestjs/common";
+import { PeopleService } from "./people.service";
 
 @Controller('people')
-export class PeopleController{
-    
+export class PeopleController {
+
+    constructor (
+        private peopleService: PeopleService
+    ){}
+
     @Get()
-    findAll(): string{
-        return "Access complete";
+    async Helloworld() {
+        return await this.peopleService.HelloWorld();
     }
 
 }
