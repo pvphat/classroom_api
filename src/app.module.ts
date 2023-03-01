@@ -3,6 +3,7 @@ import { PeopleModule } from './people/people.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PeopleEntity } from './people/people.entity';
+import { DataSource } from 'typeorm';
 
 @Module ({
   imports: [
@@ -17,7 +18,7 @@ import { PeopleEntity } from './people/people.entity';
       username: process.env.APP_DB_USERNAME,
       password: process.env.APP_DB_PASSWORD,
       database: process.env.APP_DB_DATABASE,
-      entities: [PeopleEntity],
+      autoLoadEntities: true,
       synchronize: true,
     }),
     PeopleModule,
@@ -25,4 +26,8 @@ import { PeopleEntity } from './people/people.entity';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(
+    private dataSource: DataSource
+  ) {}
+}

@@ -1,9 +1,6 @@
 import {IsString, IsNotEmpty} from 'class-validator';
 
 export class PeopleDto {
-    @IsString()
-    @IsNotEmpty()
-    id: string;
 
     @IsString()
     @IsNotEmpty()

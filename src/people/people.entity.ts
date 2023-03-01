@@ -1,13 +1,20 @@
-import {Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, PrimaryColumn} from 'typeorm';
 
-@Entity()
+@Entity("People")
 export class PeopleEntity {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column()
+    @Column({
+        type: 'varchar',
+        length: 50
+    })
     name: string;
 
-    @Column()
+    @Column({
+        type: 'varchar',
+        length: 50,        
+        unique: true
+    })
     email: string;
 }
