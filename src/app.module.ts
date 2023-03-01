@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PeopleModule } from './people/people.module';
+import { UserModule } from './user/user.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PeopleEntity } from './people/people.entity';
+import { UserEntity } from './user/user.entity';
 import { DataSource } from 'typeorm';
 
 @Module ({
@@ -21,7 +21,7 @@ import { DataSource } from 'typeorm';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    PeopleModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],

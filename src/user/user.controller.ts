@@ -1,12 +1,12 @@
 import { Controller, Get, Body, Param, Post, Delete } from "@nestjs/common";
-import { PeopleService } from "./people.service";
-import { PeopleDto } from "./people.dto";
+import { UserService } from "./user.service";
+import { UserDto } from "./user.dto";
 
-@Controller('people')
-export class PeopleController {
+@Controller('user')
+export class UserController {
 
     constructor (
-        private peopleService: PeopleService
+        private peopleService: UserService
     ){}
 
     @Get()
@@ -20,7 +20,7 @@ export class PeopleController {
     }
 
     @Post()
-    async createUser(@Body() body: PeopleDto) {
+    async createUser(@Body() body: UserDto) {
         return await this.peopleService.create(body);
     }
 
