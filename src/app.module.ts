@@ -1,8 +1,8 @@
+import { ClassModule } from './module/classes/class.module';
 import { Module } from '@nestjs/common';
-import { UserModule } from './modules/user/user.module';
+import { UserModule } from './module/users/user.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserEntity } from './modules/user/user.entity';
 import { DataSource } from 'typeorm';
 
 @Module ({
@@ -22,6 +22,7 @@ import { DataSource } from 'typeorm';
       synchronize: true,
     }),
     UserModule,
+    ClassModule,
   ],
   controllers: [],
   providers: [],

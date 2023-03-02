@@ -1,4 +1,5 @@
-import {Entity, Column, PrimaryGeneratedColumn, PrimaryColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn} from 'typeorm';
+import { ClassEntity } from '../classes/class.entity';
 
 @Entity("User")
 export class UserEntity {
