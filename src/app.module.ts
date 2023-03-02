@@ -1,3 +1,4 @@
+import { AssignmentModule } from './module/assignments/assignment.module';
 import { ClassModule } from './module/classes/class.module';
 import { Module } from '@nestjs/common';
 import { UserModule } from './module/users/user.module';
@@ -23,6 +24,7 @@ import { DataSource } from 'typeorm';
     }),
     UserModule,
     ClassModule,
+    AssignmentModule
   ],
   controllers: [],
   providers: [],
