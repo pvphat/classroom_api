@@ -5,6 +5,7 @@ import { UserModule } from './module/users/user.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
+import { PostModule } from './module/posts/post.module';
 
 @Module ({
   imports: [
@@ -24,7 +25,8 @@ import { DataSource } from 'typeorm';
     }),
     UserModule,
     ClassModule,
-    AssignmentModule
+    AssignmentModule,
+    PostModule
   ],
   controllers: [],
   providers: [],
