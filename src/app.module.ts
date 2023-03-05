@@ -1,3 +1,4 @@
+import { AssignmentsToUsersModule } from './module/assignments-to-users/assignments-to-users.module';
 import { UsersInClassModule } from './module/users-in-class/users-in-class.module';
 import { AssignmentModule } from './module/assignments/assignment.module';
 import { ClassModule } from './module/classes/class.module';
@@ -28,7 +29,8 @@ import { PostModule } from './module/posts/post.module';
     ClassModule,
     AssignmentModule,
     PostModule,
-    UsersInClassModule
+    UsersInClassModule,
+    AssignmentsToUsersModule
   ],
   controllers: [],
   providers: [],

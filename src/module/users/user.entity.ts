@@ -1,3 +1,4 @@
+import { AssignmentsToUsersEntity } from './../assignments-to-users/assignments-to-users.entity';
 import { PostEntity } from './../posts/post.entity';
 import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
 import {Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn, JoinColumn, ManyToMany} from 'typeorm';
@@ -29,5 +30,8 @@ export class UserEntity {
 
     @OneToMany(()=>PostEntity, (post)=>post.user)
     posts: PostEntity[];
+
+    @OneToMany(()=>AssignmentsToUsersEntity, (assignment2User)=>assignment2User.user)
+    assignments: AssignmentsToUsersEntity[];
     
 }

@@ -1,3 +1,4 @@
+import { AssignmentsToUsersEntity } from './../assignments-to-users/assignments-to-users.entity';
 import { ClassEntity } from './../classes/class.entity';
 import { Column, Entity, Generated, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 
@@ -39,5 +40,8 @@ export class AssignmentEntity {
     @JoinColumn({
         name: "class_id"
     })
-    class: ClassEntity
+    class: ClassEntity;
+
+    @OneToMany(()=> AssignmentsToUsersEntity, (assignment2User)=>assignment2User.assignment)
+    users: AssignmentsToUsersEntity[];
 }
