@@ -1,3 +1,4 @@
+import { PostEntity } from './../posts/post.entity';
 import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
 import {Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn, JoinColumn, ManyToMany} from 'typeorm';
 import { ClassEntity } from '../classes/class.entity';
@@ -24,6 +25,9 @@ export class UserEntity {
     ownedClasses: ClassEntity[];
 
     @OneToMany(()=> UsersInClassEntity, (userInClass)=> userInClass.user)
-    inClasses: UsersInClassEntity;
+    inClasses: UsersInClassEntity[];
+
+    @OneToMany(()=>PostEntity, (post)=>post.user)
+    posts: PostEntity[];
     
 }

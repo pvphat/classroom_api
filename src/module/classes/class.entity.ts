@@ -1,3 +1,4 @@
+import { PostEntity } from './../posts/post.entity';
 import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
 import { AssignmentEntity } from './../assignments/assigment.entity';
 import { UserEntity } from './../users/user.entity';
@@ -49,4 +50,7 @@ export class ClassEntity {
 
     @OneToMany(()=> UsersInClassEntity, (classHasUsers) => classHasUsers.class)
     users: UsersInClassEntity[];
+
+    @OneToMany(()=>PostEntity, (post)=>post.class)
+    posts: PostEntity[];
 }
