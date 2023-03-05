@@ -1,5 +1,7 @@
-import { UserEntity } from '../users/user.entity';
-import { Column, PrimaryColumn, Generated, ManyToOne, Entity } from 'typeorm';
+import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
+import { AssignmentEntity } from './../assignments/assigment.entity';
+import { UserEntity } from './../users/user.entity';
+import { Column, PrimaryColumn, Generated, ManyToOne, Entity, JoinColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 
 @Entity("Class")
 export class ClassEntity {
@@ -36,4 +38,15 @@ export class ClassEntity {
     @Generated("uuid")
     code: string;
 
+    @ManyToOne(() => UserEntity, (user) => user.ownedClasses)
+    @JoinColumn({
+        name: "owner_id"
+    })
+    owner: UserEntity;
+
+    @OneToMany(()=> AssignmentEntity, (assignment) => assignment.class)
+    assignments: AssignmentEntity[];
+
+    @OneToMany(()=> UsersInClassEntity, (classHasUsers) => classHasUsers.class)
+    users: UsersInClassEntity[];
 }

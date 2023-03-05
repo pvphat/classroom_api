@@ -1,3 +1,4 @@
+import { UsersInClassModule } from './module/users-in-class/users-in-class.module';
 import { AssignmentModule } from './module/assignments/assignment.module';
 import { ClassModule } from './module/classes/class.module';
 import { Module } from '@nestjs/common';
@@ -26,7 +27,8 @@ import { PostModule } from './module/posts/post.module';
     UserModule,
     ClassModule,
     AssignmentModule,
-    PostModule
+    PostModule,
+    UsersInClassModule
   ],
   controllers: [],
   providers: [],

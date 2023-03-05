@@ -1,4 +1,5 @@
-import { Column, Entity, Generated, PrimaryColumn } from "typeorm";
+import { ClassEntity } from './../classes/class.entity';
+import { Column, Entity, Generated, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity("Assignment")
 export class AssignmentEntity {
@@ -34,4 +35,9 @@ export class AssignmentEntity {
     })
     due_date?: Date;
 
+    @ManyToOne(()=> ClassEntity, (classEntity)=>classEntity.assignments)
+    @JoinColumn({
+        name: "class_id"
+    })
+    class: ClassEntity
 }

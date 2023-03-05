@@ -1,4 +1,5 @@
-import {Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn} from 'typeorm';
+import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn, JoinColumn, ManyToMany} from 'typeorm';
 import { ClassEntity } from '../classes/class.entity';
 
 @Entity("User")
@@ -18,4 +19,11 @@ export class UserEntity {
         unique: true
     })
     email: string;
+
+    @OneToMany(()=>ClassEntity, (classEntity)=> classEntity.owner)
+    ownedClasses: ClassEntity[];
+
+    @OneToMany(()=> UsersInClassEntity, (userInClass)=> userInClass.user)
+    inClasses: UsersInClassEntity;
+    
 }
