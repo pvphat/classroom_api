@@ -5,11 +5,6 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 @Entity("AssignmentsToUsers")
 export class AssignmentsToUsersEntity {
 
-    @Column({
-        type: "float"
-    })
-    grade: number;
-
     @ManyToOne(()=>AssignmentEntity, (assignment)=> assignment.users)
     @JoinColumn({
         name: "assignment_id"

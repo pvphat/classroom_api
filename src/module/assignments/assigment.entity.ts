@@ -1,3 +1,4 @@
+import { SubmissionEntity } from './../submissions/submission.entity';
 import { AssignmentsToUsersEntity } from './../assignments-to-users/assignments-to-users.entity';
 import { ClassEntity } from './../classes/class.entity';
 import { Column, Entity, Generated, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
@@ -44,4 +45,7 @@ export class AssignmentEntity {
 
     @OneToMany(()=> AssignmentsToUsersEntity, (assignment2User)=>assignment2User.assignment)
     users: AssignmentsToUsersEntity[];
+
+    @OneToMany(()=> SubmissionEntity, (submission)=> submission.assignment)
+    submissions: SubmissionEntity[];
 }

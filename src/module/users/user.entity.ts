@@ -1,3 +1,4 @@
+import { SubmissionEntity } from './../submissions/submission.entity';
 import { AssignmentsToUsersEntity } from './../assignments-to-users/assignments-to-users.entity';
 import { PostEntity } from './../posts/post.entity';
 import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
@@ -33,5 +34,8 @@ export class UserEntity {
 
     @OneToMany(()=>AssignmentsToUsersEntity, (assignment2User)=>assignment2User.user)
     assignments: AssignmentsToUsersEntity[];
+
+    @OneToMany(()=> SubmissionEntity, (submission)=> submission.user)
+    submissions: SubmissionEntity[];
     
 }
