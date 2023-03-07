@@ -1,9 +1,9 @@
-import { UserEntity } from './../users/user.entity';
-import { AssignmentEntity } from './../assignments/assigment.entity';
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { UserEntity } from '../users/user.entity';
+import { AssignmentEntity } from '../assignments/assigment.entity';
+import { Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
-@Entity("AssignmentsToUsers")
-export class AssignmentsToUsersEntity {
+@Entity("Assignee")
+export class AssigneeEntity {
 
     @ManyToOne(()=>AssignmentEntity, (assignment)=> assignment.users)
     @JoinColumn({

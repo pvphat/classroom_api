@@ -15,7 +15,8 @@ export class SubmissionEntity {
     content: string;
 
     @Column({
-        type: "float"
+        type: "float",
+        nullable: true
     })
     grade: number;
 

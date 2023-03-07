@@ -1,13 +1,14 @@
 import { SubmissionEntity } from './../submissions/submission.entity';
-import { AssignmentsToUsersEntity } from './../assignments-to-users/assignments-to-users.entity';
+import { AssigneeEntity } from '../assignees/assignee.entity';
 import { PostEntity } from './../posts/post.entity';
 import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
-import {Entity, Column, PrimaryGeneratedColumn, OneToMany, PrimaryColumn, JoinColumn, ManyToMany} from 'typeorm';
+import { Entity, Column, OneToMany, PrimaryColumn, Generated } from 'typeorm';
 import { ClassEntity } from '../classes/class.entity';
 
 @Entity("User")
 export class UserEntity {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
+    @Generated("uuid")
     id: string;
 
     @Column({
@@ -32,8 +33,8 @@ export class UserEntity {
     @OneToMany(()=>PostEntity, (post)=>post.user)
     posts: PostEntity[];
 
-    @OneToMany(()=>AssignmentsToUsersEntity, (assignment2User)=>assignment2User.user)
-    assignments: AssignmentsToUsersEntity[];
+    @OneToMany(()=>AssigneeEntity, (assignment2User)=>assignment2User.user)
+    assignments: AssigneeEntity[];
 
     @OneToMany(()=> SubmissionEntity, (submission)=> submission.user)
     submissions: SubmissionEntity[];

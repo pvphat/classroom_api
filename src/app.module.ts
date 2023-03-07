@@ -1,4 +1,5 @@
-import { AssignmentsToUsersModule } from './module/assignments-to-users/assignments-to-users.module';
+import { SubmissionModule } from './module/submissions/submission.module';
+import { AssigneeModule } from './module/assignees/assignee.module';
 import { UsersInClassModule } from './module/users-in-class/users-in-class.module';
 import { AssignmentModule } from './module/assignments/assignment.module';
 import { ClassModule } from './module/classes/class.module';
@@ -30,7 +31,8 @@ import { PostModule } from './module/posts/post.module';
     AssignmentModule,
     PostModule,
     UsersInClassModule,
-    AssignmentsToUsersModule
+    AssigneeModule,
+    SubmissionModule
   ],
   controllers: [],
   providers: [],
