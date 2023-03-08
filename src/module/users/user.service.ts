@@ -22,4 +22,8 @@ export class UserService {
     async create(info: any){
         return this.userRepository.save(info);
     }
+
+    async delete(id: string){
+        return this.userRepository.delete({id: id});
+    }
 }
