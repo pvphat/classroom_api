@@ -1,8 +1,8 @@
-import { PostEntity } from './../posts/post.entity';
-import { UsersInClassEntity } from './../users-in-class/users-in-class.entity';
-import { AssignmentEntity } from './../assignments/assigment.entity';
-import { UserEntity } from './../users/user.entity';
-import { Column, PrimaryColumn, Generated, ManyToOne, Entity, JoinColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
+import { PostEntity } from '../posts/post.entity';
+import { UsersInClassEntity } from '../users-in-class/users-in-class.entity';
+import { AssignmentEntity } from '../assignments/assigment.entity';
+import { UserEntity } from '../users/user.entity';
+import { Column, PrimaryColumn, Generated, ManyToOne, Entity, JoinColumn, OneToMany, ManyToMany, JoinTable, Tree, TreeParent, TreeChildren } from 'typeorm';
 
 @Entity("Class")
 export class ClassEntity {

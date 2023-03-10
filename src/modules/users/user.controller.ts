@@ -28,4 +28,9 @@ export class UserController {
     async delete(@Param('id') id: string) {
         return await this.userService.delete(id);
     }
+
+    /*@Get('children/:id')
+    async getChildren(@Param('id') id: string){
+        return await this.userService.getDescendants(id);
+    }*/
 }

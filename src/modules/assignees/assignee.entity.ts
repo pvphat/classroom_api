@@ -1,6 +1,6 @@
 import { UserEntity } from '../users/user.entity';
 import { AssignmentEntity } from '../assignments/assigment.entity';
-import { Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { Entity, JoinColumn, ManyToOne, PrimaryColumn, Tree } from "typeorm";
 
 @Entity("Assignee")
 export class AssigneeEntity {

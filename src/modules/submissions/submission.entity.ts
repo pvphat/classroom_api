@@ -1,6 +1,6 @@
-import { UserEntity } from './../users/user.entity';
-import { AssignmentEntity } from './../assignments/assigment.entity';
-import { Column, Entity, Generated, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { UserEntity } from '../users/user.entity';
+import { AssignmentEntity } from '../assignments/assigment.entity';
+import { Column, Entity, Generated, JoinColumn, ManyToOne, PrimaryColumn, Tree } from "typeorm";
 
 @Entity("Submission")
 export class SubmissionEntity {

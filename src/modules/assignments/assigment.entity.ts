@@ -1,7 +1,7 @@
-import { SubmissionEntity } from './../submissions/submission.entity';
+import { SubmissionEntity } from '../submissions/submission.entity';
 import { AssigneeEntity } from '../assignees/assignee.entity';
-import { ClassEntity } from './../classes/class.entity';
-import { Column, Entity, Generated, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
+import { ClassEntity } from '../classes/class.entity';
+import { Column, Entity, Generated, JoinColumn, ManyToOne, OneToMany, PrimaryColumn, Tree } from "typeorm";
 
 @Entity("Assignment")
 export class AssignmentEntity {

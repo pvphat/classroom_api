@@ -1,6 +1,6 @@
-import { ClassEntity } from './../classes/class.entity';
-import { UserEntity } from './../users/user.entity';
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { ClassEntity } from '../classes/class.entity';
+import { UserEntity } from '../users/user.entity';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, Tree, TreeChildren } from "typeorm";
 
 @Entity("UsersInClass")
 export class UsersInClassEntity {

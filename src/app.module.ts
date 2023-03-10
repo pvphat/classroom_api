@@ -1,14 +1,14 @@
-import { SubmissionModule } from './module/submissions/submission.module';
-import { AssigneeModule } from './module/assignees/assignee.module';
-import { UsersInClassModule } from './module/users-in-class/users-in-class.module';
-import { AssignmentModule } from './module/assignments/assignment.module';
-import { ClassModule } from './module/classes/class.module';
+import { SubmissionModule } from './modules/submissions/submission.module';
+import { AssigneeModule } from './modules/assignees/assignee.module';
+import { UsersInClassModule } from './modules/users-in-class/users-in-class.module';
+import { AssignmentModule } from './modules/assignments/assignment.module';
+import { ClassModule } from './modules/classes/class.module';
 import { Module } from '@nestjs/common';
-import { UserModule } from './module/users/user.module';
+import { UserModule } from './modules/users/user.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { PostModule } from './module/posts/post.module';
+import { PostModule } from './modules/posts/post.module';
 
 @Module ({
   imports: [

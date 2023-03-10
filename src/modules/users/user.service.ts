@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { UserEntity } from "./user.entity";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
+import { Repository, TreeRepository } from "typeorm";
 
 @Injectable()
 export class UserService {
@@ -26,4 +26,9 @@ export class UserService {
     async delete(id: string){
         return this.userRepository.delete({id: id});
     }
+
+    /*async getDescendants(id: string){
+        let user = await this.userRepository.findOneBy({id});
+        return await this.userRepository.findDescendants(user);
+    }*/
 }
