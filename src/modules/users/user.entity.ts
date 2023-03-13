@@ -4,7 +4,7 @@ import { PostEntity } from '../posts/post.entity';
 import { UsersInClassEntity } from '../users-in-class/users-in-class.entity';
 import { Entity, Column, OneToMany, PrimaryColumn, Generated, Tree, TreeChildren, TreeParent } from 'typeorm';
 import { ClassEntity } from '../classes/class.entity';
-import { BaseEntity } from 'src/common/base.entity.abstract';
+import { BaseEntity } from 'src/common/base.entity';
 
 @Entity("User")
 export class UserEntity extends BaseEntity{

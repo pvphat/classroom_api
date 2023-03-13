@@ -25,12 +25,12 @@ export class UserController {
     }
 
     @Delete(":id")
-    async delete(@Param('id') id: string) {
-        return await this.userService.delete(id);
+    async softDelete(@Param('id') id: string) {
+        return await this.userService.softDelete(id);
     }
 
-    /*@Get('children/:id')
-    async getChildren(@Param('id') id: string){
-        return await this.userService.getDescendants(id);
-    }*/
+    @Post(":id")
+    async recover(@Param('id') id: string){
+        return await this.userService.recover(id);
+    }
 }

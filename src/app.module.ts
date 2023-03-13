@@ -7,8 +7,8 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './modules/users/user.module';
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DataSource } from 'typeorm';
 import { PostModule } from './modules/posts/post.module';
+import { ServiceModule } from './common/service.module';
 
 @Module ({
   imports: [
@@ -26,19 +26,21 @@ import { PostModule } from './modules/posts/post.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    ServiceModule,
     UserModule,
     ClassModule,
     AssignmentModule,
     PostModule,
     UsersInClassModule,
     AssigneeModule,
-    SubmissionModule
+    SubmissionModule,
+    
   ],
   controllers: [],
-  providers: [],
+  providers: [
+  ],
 })
 export class AppModule {
   constructor(
-    private dataSource: DataSource
   ) {}
 }

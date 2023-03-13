@@ -10,7 +10,8 @@ import { SubmissionEntity } from "src/modules/submissions/submission.entity";
 import { PostEntity } from "src/modules/posts/post.entity";
 
 @Injectable()
-export class BeanService {
+export class BeanManagementService {
+    
     public constructor(
         @InjectRepository(UserEntity) public readonly user: Repository<UserEntity>,
         @InjectRepository(ClassEntity) public readonly classes: Repository<ClassEntity>,

@@ -12,7 +12,11 @@ export class ClassService{
     ){}
 
     async getAll(){
-        return await this.classRepository.find();
+        return await this.classRepository.find(
+            {
+                withDeleted: false
+            }
+        );
     }
 
     async getOneBy(info: any){

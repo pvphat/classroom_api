@@ -3,7 +3,7 @@ import { UsersInClassEntity } from '../users-in-class/users-in-class.entity';
 import { AssignmentEntity } from '../assignments/assigment.entity';
 import { UserEntity } from '../users/user.entity';
 import { Column, PrimaryColumn, Generated, ManyToOne, Entity, JoinColumn, OneToMany, ManyToMany, JoinTable, Tree, TreeParent, TreeChildren } from 'typeorm';
-import { BaseEntity } from 'src/common/base.entity.abstract';
+import { BaseEntity } from 'src/common/base.entity';
 
 @Entity("Class")
 export class ClassEntity extends BaseEntity {
@@ -41,7 +41,7 @@ export class ClassEntity extends BaseEntity {
     code: string;
 
     @ManyToOne(() => UserEntity, (user) => user.ownedClasses, {
-        onDelete: 'CASCADE'
+        cascade: true
     })
     @JoinColumn({
         name: "owner_id"

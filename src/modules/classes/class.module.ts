@@ -3,12 +3,13 @@ import { ClassController } from './class.controller';
 import { ClassService } from './class.service';
 import { Module } from "@nestjs/common";
 import { ClassEntity } from './class.entity';
+import { ServiceModule } from 'src/common/service.module';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([ClassEntity])],
-    providers: [ClassService],
+    imports: [
+        ServiceModule,
+    ],
     controllers: [ClassController],
-    exports: []
 })
 export class ClassModule{
     
