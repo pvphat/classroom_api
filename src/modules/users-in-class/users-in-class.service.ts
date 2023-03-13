@@ -18,4 +18,9 @@ export class UsersInClassService {
     async findAll(){
         return await this.usersInClassEntity.find();
     }
+
+    async delete(info: any){
+        let item = await this.usersInClassEntity.find(info);
+        return await this.usersInClassEntity.remove(item);
+    }
 }

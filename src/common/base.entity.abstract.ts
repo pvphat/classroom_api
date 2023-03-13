@@ -1,4 +1,4 @@
-import { Column, ManyToOne } from "typeorm";
+import { Column, DeleteDateColumn, ManyToOne } from "typeorm";
 
 export abstract class BaseEntity {
     @Column({
@@ -12,7 +12,11 @@ export abstract class BaseEntity {
     created_at: Date;
 
     @Column({
-        type: "datetime"
+        type: "datetime",
+        nullable: true
     })
     updated_at: Date;
+
+    @DeleteDateColumn()
+    deleted_at: Date;
 }

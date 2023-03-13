@@ -17,13 +17,17 @@ export class UsersInClassEntity {
     @PrimaryColumn()
     class_id: string;
 
-    @ManyToOne(()=> UserEntity, (user)=> user.inClasses)
+    @ManyToOne(()=> UserEntity, (user)=> user.inClasses, {
+        cascade: true
+    })
     @JoinColumn({
         name: "user_id"
     })
     user: UserEntity;
 
-    @ManyToOne(()=> ClassEntity, (classEntity)=> classEntity.users)
+    @ManyToOne(()=> ClassEntity, (classEntity)=> classEntity.users, {
+        cascade: true
+    })
     @JoinColumn({
         name: "class_id"
     })

@@ -11,7 +11,7 @@ export class ClassService{
         private classRepository: Repository<ClassEntity>
     ){}
 
-    async getAllClass(){
+    async getAll(){
         return await this.classRepository.find();
     }
 

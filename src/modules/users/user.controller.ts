@@ -10,17 +10,17 @@ export class UserController {
     ){}
 
     @Get()
-    async getAllUser() {
-        return await this.userService.getAllUser();
+    async getAll() {
+        return await this.userService.getAll();
     }
 
     @Get(':id')
-    async getUserById(@Param('id') id: string) {
+    async getById(@Param('id') id: string) {
         return await this.userService.getOneBy({id});
     }
 
     @Post()
-    async createUser(@Body() body: UserDto) {
+    async create(@Body() body: UserDto) {
         return await this.userService.create(body);
     }
 

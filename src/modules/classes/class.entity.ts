@@ -3,9 +3,10 @@ import { UsersInClassEntity } from '../users-in-class/users-in-class.entity';
 import { AssignmentEntity } from '../assignments/assigment.entity';
 import { UserEntity } from '../users/user.entity';
 import { Column, PrimaryColumn, Generated, ManyToOne, Entity, JoinColumn, OneToMany, ManyToMany, JoinTable, Tree, TreeParent, TreeChildren } from 'typeorm';
+import { BaseEntity } from 'src/common/base.entity.abstract';
 
 @Entity("Class")
-export class ClassEntity {
+export class ClassEntity extends BaseEntity {
     
     @PrimaryColumn()
     @Generated("uuid")
@@ -39,7 +40,9 @@ export class ClassEntity {
     @Generated("uuid")
     code: string;
 
-    @ManyToOne(() => UserEntity, (user) => user.ownedClasses)
+    @ManyToOne(() => UserEntity, (user) => user.ownedClasses, {
+        onDelete: 'CASCADE'
+    })
     @JoinColumn({
         name: "owner_id"
     })

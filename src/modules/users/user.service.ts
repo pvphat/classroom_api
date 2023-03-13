@@ -11,7 +11,7 @@ export class UserService {
         private userRepository: Repository<UserEntity>
     ){}
     
-    async getAllUser() {
+    async getAll() {
         return this.userRepository.find();
     }
 
@@ -26,9 +26,4 @@ export class UserService {
     async delete(id: string){
         return this.userRepository.delete({id: id});
     }
-
-    /*async getDescendants(id: string){
-        let user = await this.userRepository.findOneBy({id});
-        return await this.userRepository.findDescendants(user);
-    }*/
 }

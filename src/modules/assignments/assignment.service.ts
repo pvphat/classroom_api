@@ -10,7 +10,7 @@ export class AssignmentService {
         private assignmentRepository: Repository<AssignmentEntity>
     ){}
 
-    async getAllAssignment(){
+    async getAll(){
         return await this.assignmentRepository.find();
     }
 

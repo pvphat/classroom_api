@@ -4,9 +4,10 @@ import { PostEntity } from '../posts/post.entity';
 import { UsersInClassEntity } from '../users-in-class/users-in-class.entity';
 import { Entity, Column, OneToMany, PrimaryColumn, Generated, Tree, TreeChildren, TreeParent } from 'typeorm';
 import { ClassEntity } from '../classes/class.entity';
+import { BaseEntity } from 'src/common/base.entity.abstract';
 
 @Entity("User")
-export class UserEntity {
+export class UserEntity extends BaseEntity{
     @PrimaryColumn()
     @Generated("uuid")
     id: string;
@@ -33,15 +34,9 @@ export class UserEntity {
 
     @Column({
         type: 'varchar',
-        length: 50,
-        unique: true
+        length: 50
     })
     password: string;
-
-    @Column({
-        default: false
-    })
-    is_deleted: boolean;
 
     @OneToMany(()=>ClassEntity, (classEntity)=> classEntity.owner)
     ownedClasses: ClassEntity[];

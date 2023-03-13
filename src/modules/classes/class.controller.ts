@@ -9,17 +9,17 @@ export class ClassController{
     ){}
 
     @Get()
-    async getAllClass(){
-        return await this.classService.getAllClass();
+    async getAll(){
+        return await this.classService.getAll();
     }
 
     @Get(':id')
-    async getClassById(@Param('id') id: string){
+    async getById(@Param('id') id: string){
         return await this.classService.getOneBy({id});
     }
 
     @Post()
-    async createClass(@Body() body){
+    async create(@Body() body){
         return await this.classService.create(body);        
     }
 }

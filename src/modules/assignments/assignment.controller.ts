@@ -9,17 +9,17 @@ export class AssignmentController {
     ){}
 
     @Get()
-    async getAllAssignments(){
-        return await this.assignmentService.getAllAssignment();
+    async getAll(){
+        return await this.assignmentService.getAll();
     }
 
     @Get(':id')
-    async getAssignmentById(@Param('id') id: string){
+    async getById(@Param('id') id: string){
         return await this.assignmentService.getOneBy({id});
     }
 
     @Post()
-    async createAssignment(@Body() body: any){
+    async create(@Body() body: any){
         return await this.assignmentService.create(body);
     }
 }

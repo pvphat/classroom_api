@@ -1,5 +1,5 @@
 import { UsersInClassService } from './users-in-class.service';
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
 
 
 //For test use only
@@ -17,5 +17,10 @@ export class UsersInClassController {
     @Post()
     async create(@Body() body){
         return await this.usersInClassService.create(body);
+    }
+
+    @Delete()
+    async delete(@Body() body){
+        return await this.usersInClassService.delete(body);
     }
 }

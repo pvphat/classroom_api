@@ -8,7 +8,7 @@ export class PostController {
         private postService: PostService
     ){}
     @Get()
-    async getAllPost() {
+    async getAll() {
         return await this.postService.findAll();
     }
 
@@ -18,7 +18,7 @@ export class PostController {
     }
 
     @Post()
-    async createPost(@Body() body: PostDto) {
+    async create(@Body() body: PostDto) {
         return await this.postService.create(body);
     }
 }

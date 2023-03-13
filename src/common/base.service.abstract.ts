@@ -4,7 +4,7 @@ import { Injectable } from "@nestjs/common";
 export abstract class BaseService {
 
     constructor(
-        public beanRepo
+        public beanRepository
     ){}
 
     async delete() {
